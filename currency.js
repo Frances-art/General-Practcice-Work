@@ -10,9 +10,10 @@ const toShowResult = document.querySelector(".final-result");
 function convertCurrency(event) {
   event.preventDefault();
   toShowAmount.innerHTML =  amountInput.value;
-  toShowBase.textContent =     baseCurrencyInput.value;
+  toShowBase.textContent =     baseCurrencyInput.value 
+  + ' = ';
   toShowSecond.textContent =  secondCurrencyInput.value;
-  toShowResult.textContent = calculateNewAmount(
+  toShowResult.textContent =  calculateNewAmount(
     baseCurrencyInput.value,
     amountInput.value,
     secondCurrencyInput.value
@@ -26,14 +27,14 @@ function calculateNewAmount(fromUnit, fromValue, toUnit) {
   };
 
   if (fromUnit == toUnit) {
-    return fromUnit;
+    return fromValue;
   }
 
   if (crrncy[fromUnit]) {
     return fromUnit * crrncy[fromUnit][toUnit];
   }
 
-  return fromUnit * (1 / crrncy[toUnit][fromValue]);
+  return fromValue * (1 / crrncy[toUnit][fromUnit]);
 }
 
 

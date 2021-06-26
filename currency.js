@@ -1,0 +1,9 @@
+const crrncy = { EUR: { PLN: 4.15, USD: 0.83 }, USD: { PLN: 3.45, EUR: 1.2 } };
+const btn = document.querySelector(".calculate-btn");
+const baseCurrencyInput = document.getElementById("currency-1");
+const secondCurrencyInput = document.getElementById("currency-2");
+const amountInput = document.getElementById("amount");
+const toShowAmount = document.querySelector(".given-amount");
+const toShowBase = document.querySelector(".base-currency");
+const toShowSecond = document.querySelector(".second-currency");
+const toShowResult = document.querySelector(".final-result");

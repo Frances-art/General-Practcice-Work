@@ -5,3 +5,19 @@ body {
     padding: 15%;
     margin-left: 20em;
     
+}
+.container{
+
+  /*font-size: 0in;*/
+  font-style:normal;
+
+
+}
+
+.form-control #currency-1{
+    border-width: 30px;
+    
+    
+    
+      }
+     

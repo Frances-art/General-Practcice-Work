@@ -40,3 +40,6 @@ function calculateNewAmount(fromUnit, fromValue, toUnit) {
 
 
 btn.addEventListener("click", convertCurrency);
+
+
+

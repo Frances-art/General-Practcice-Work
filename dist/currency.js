@@ -1,22 +1,27 @@
-const btn = document.querySelector(".calculate-btn");
-const baseCurrencyInput = document.getElementById("currency-1");
-const secondCurrencyInput = document.getElementById("currency-2");
-const amountInput = document.getElementById("amount");
-const toShowAmount = document.querySelector(".given-amount");
-const toShowBase = document.querySelector(".base-currency");
-const toShowSecond = document.querySelector(".second-currency");
-const toShowResult = document.querySelector(".final-result");
+const useDOM = () => {
+  
+  return {
+    btn: document.querySelector(".calculate-btn"),
+    baseCurrencyInput: document.getElementById("currency-1"),
+    secondCurrencyInput: document.getElementById("currency-2"),
+    amountInput: document.getElementById("amount"),
+    toShowAmount: document.querySelector(".given-amount"),
+    toShowBase: document.querySelector(".base-currency"),
+    toShowSecond: document.querySelector(".second-currency"),
+    toShowResult: document.querySelector(".final-result"),
+  };
+};
+
 
 function convertCurrency(event) {
   event.preventDefault();
-  toShowAmount.innerHTML =  amountInput.value;
-  toShowBase.textContent =     baseCurrencyInput.value 
-  + ' = ';
-  toShowSecond.textContent =  secondCurrencyInput.value;
-  toShowResult.textContent =  calculateNewAmount(
-    baseCurrencyInput.value,
-    amountInput.value,
-    secondCurrencyInput.value
+  useDOM().toShowAmount.innerHTML = useDOM().amountInput.value;
+  useDOM().toShowBase.textContent = useDOM().baseCurrencyInput.value + " = ";
+  useDOM().toShowSecond.textContent = useDOM().secondCurrencyInput.value;
+  useDOM().toShowResult.textContent = calculateNewAmount(
+    useDOM().baseCurrencyInput.value,
+    useDOM().amountInput.value,
+    useDOM().secondCurrencyInput.value
   );
 }
 
@@ -37,9 +42,4 @@ function calculateNewAmount(fromUnit, fromValue, toUnit) {
   return fromValue * (1 / crrncy[toUnit][fromUnit]);
 }
 
-
-
-btn.addEventListener("click", convertCurrency);
-
-
-
+useDOM(). btn.addEventListener("click", convertCurrency);
